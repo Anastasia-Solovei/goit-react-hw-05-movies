@@ -1,0 +1,32 @@
+.MovieCardContent {
+  display: flex;
+  align-items: flex-start;
+}
+
+.MovieCardPoster {
+  display: inline-block;
+  width: 500;
+  height: auto;
+}
+
+.MovieCardInfo {
+  margin-left: 20px;
+}
+
+.MovieCardInfoParams {
+  font-weight: 700;
+}
+
+.MovieCardGenre {
+  font-weight: initial;
+}
+
+.MovieCardOverview {
+  margin-left: 20px;
+  font-weight: initial;
+}
+
+.MovieCardScore {
+  margin-left: 20px;
+  font-weight: initial;
+}
