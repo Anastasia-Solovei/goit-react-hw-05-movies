@@ -1,0 +1,20 @@
+.moviesPage {
+  font-size: 30px;
+  margin-top: 100px;
+  margin-left: 100px;
+}
+
+.MoviesListItem {
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.MoviesListLink {
+  color: rgb(85, 85, 194);
+  text-decoration: none;
+}
+
+.MoviesListLink:hover,
+.MoviesListLink:focus {
+  color: #dc143c;
+}
