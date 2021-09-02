@@ -1,0 +1,18 @@
+.HomeTitle {
+  margin-left: 20px;
+}
+
+.HomeListItem {
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.HomeListLink {
+  color: rgb(85, 85, 194);
+  text-decoration: none;
+}
+
+.HomeListLink:hover,
+.HomeListLink:focus {
+  color: #dc143c;
+}
