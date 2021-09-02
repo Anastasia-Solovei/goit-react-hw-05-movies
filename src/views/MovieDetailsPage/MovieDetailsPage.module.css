@@ -1,0 +1,30 @@
+.MovieDetailsError {
+  width: 400px;
+}
+
+.MovieDetailsErrorImg {
+  display: block;
+  width: 100%;
+}
+
+.MovieDetailsErrorMsg {
+  color: rgb(182, 181, 181);
+  text-align: center;
+}
+
+.MovieDetailsPageSubtitle {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.MovieDetailsLink {
+  display: block;
+  margin-bottom: 5px;
+  color: rgb(85, 85, 194);
+  text-decoration: none;
+}
+
+.MovieDetailsLink:hover,
+.MovieDetailsLink:focus {
+  color: #dc143c;
+}
