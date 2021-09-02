@@ -1,0 +1,13 @@
+.CastProfileImgContainer {
+  width: 200px;
+  height: 300px;
+  outline: 1px solid rgb(206, 206, 206);
+}
+
+.CastProfileImg {
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  object-fit: cover;
+}
