@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import {
   Route,
   NavLink,
@@ -12,9 +12,12 @@ import * as movieAPI from '../../services/movie-api';
 import defaultImg from '../../images/error_404.jpg';
 import Button from '../../components/Button';
 import MovieCard from '../MovieCard';
-import Cast from '../Cast';
-import Reviews from '../Reviews';
 import s from './MovieDetailsPage.module.css';
+
+const Cast = lazy(() => import('../Cast' /* webpackChunkName: "cast" */));
+const Reviews = lazy(() =>
+  import('../Reviews' /* webpackChunkName: "reviews" */),
+);
 
 export default function MovieDetailsPage() {
   const location = useLocation();
@@ -94,14 +97,17 @@ export default function MovieDetailsPage() {
         </NavLink>
       )}
       <hr />
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <Route path={`${path}/cast`}>
+          {castInfo && <Cast castInfo={castInfo} />}
+        </Route>
+      </Suspense>
 
-      <Route path={`${path}/cast`}>
-        {castInfo && <Cast castInfo={castInfo} />}
-      </Route>
-
-      <Route path={`${path}/reviews`}>
-        {reviewsInfo && <Reviews reviewsInfo={reviewsInfo} />}
-      </Route>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <Route path={`${path}/reviews`}>
+          {reviewsInfo && <Reviews reviewsInfo={reviewsInfo} />}
+        </Route>
+      </Suspense>
     </>
   );
 }
