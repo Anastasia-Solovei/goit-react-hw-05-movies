@@ -7,7 +7,7 @@ import s from './Cast.module.css';
 const Cast = ({ castInfo }) => {
   return (
     <>
-      {castInfo && (
+      {castInfo ? (
         <ul>
           {castInfo.map(actor => {
             return (
@@ -29,6 +29,8 @@ const Cast = ({ castInfo }) => {
             );
           })}
         </ul>
+      ) : (
+        <p>We don't have information concerning cast for this movie...</p>
       )}
     </>
   );

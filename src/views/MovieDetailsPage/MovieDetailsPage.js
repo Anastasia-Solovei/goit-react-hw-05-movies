@@ -1,5 +1,6 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
 import {
+  Switch,
   Route,
   NavLink,
   useParams,
@@ -98,15 +99,15 @@ export default function MovieDetailsPage() {
       )}
       <hr />
       <Suspense fallback={<h1>Loading...</h1>}>
-        <Route path={`${path}/cast`}>
-          {castInfo && <Cast castInfo={castInfo} />}
-        </Route>
-      </Suspense>
+        <Switch>
+          <Route path={`${path}/cast`}>
+            <Cast castInfo={castInfo} />
+          </Route>
 
-      <Suspense fallback={<h1>Loading...</h1>}>
-        <Route path={`${path}/reviews`}>
-          {reviewsInfo && <Reviews reviewsInfo={reviewsInfo} />}
-        </Route>
+          <Route path={`${path}/reviews`}>
+            <Reviews reviewsInfo={reviewsInfo} />
+          </Route>
+        </Switch>
       </Suspense>
     </>
   );
